@@ -10,7 +10,9 @@ For a non-streaming implementation see https://github.com/andrewharvey/geojson-i
 
 ## usage
 
-    geojson-id < file.geojson > output.geojson
+    geojson-id [--property] < file.geojson > output.geojson
+
+If --property is present the id will be added as a property rather than as a high level id field.
 
 ## credits
 

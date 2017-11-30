@@ -6,16 +6,22 @@ module.exports = idStream;
 module.exports.addId = addId;
 
 var id = 0;
-function idStream() {
+function idStream(options) {
     return Combiner(geojsonStream.parse(),
         through(function(feature, callback) {
-            this.queue(addId(feature));
+            this.queue(addId(feature, options));
         }),
         geojsonStream.stringify());
 }
 
-function addId(feature) {
-    return Object.assign({}, feature, {
-        id: id++
-    });
+function addId(feature, options) {
+    if (options && options.property) {
+        return Object.assign({}, feature, {
+            properties: Object.assign(feature.properties, {id: id++})
+        });
+    } else {
+        return Object.assign({}, feature, {
+            id: id++
+        });
+    }
 }

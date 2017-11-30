@@ -13,6 +13,7 @@
   "author": "Andrew Harvey",
   "dependencies": {
     "geojson-stream": "^0.0.1",
+    "minimist": "^1.2.0",
     "stream-combiner": "^0.2.2",
     "through": "^2.3.8"
   },
