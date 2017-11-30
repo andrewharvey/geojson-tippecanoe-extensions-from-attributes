@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+var id = require('./');
+
+process.stdin
+    .pipe(id())
+    .pipe(process.stdout);
