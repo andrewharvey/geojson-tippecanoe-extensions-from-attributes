@@ -2,26 +2,33 @@ var through = require('through'),
     Combiner = require('stream-combiner'),
     geojsonStream = require('geojson-stream');
 
-module.exports = idStream;
-module.exports.addId = addId;
+module.exports = extensionsStream;
+module.exports.setExtensions = setExtensions;
 
 var id = 0;
-function idStream(options) {
+function extensionsStream() {
     return Combiner(geojsonStream.parse(),
         through(function(feature, callback) {
-            this.queue(addId(feature, options));
+            this.queue(setExtensions(feature ));
         }),
         geojsonStream.stringify());
 }
 
-function addId(feature, options) {
-    if (options && options.property) {
-        return Object.assign({}, feature, {
-            properties: Object.assign(feature.properties, {id: id++})
-        });
-    } else {
-        return Object.assign({}, feature, {
-            id: id++
-        });
+function setExtensions(feature) {
+    var tippecanoe = {};
+    if ('minzoom' in feature.properties) {
+        tippecanoe.minzoom = feature.properties.minzoom
+        delete feature.properties.minzoom
     }
+    if ('maxzoom' in feature.properties) {
+        tippecanoe.maxzoom = feature.properties.maxzoom
+        delete feature.properties.maxzoom
+    }
+    if ('layer' in feature.properties) {
+        tippecanoe.layer = feature.properties.layer
+        delete feature.properties.layer
+    }
+    return Object.assign({}, feature, {
+        tipppecanoe: tippecanoe
+    });
 }

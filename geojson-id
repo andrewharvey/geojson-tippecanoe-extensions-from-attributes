@@ -1,8 +1,0 @@
-#!/usr/bin/env node
-
-var id = require('./');
-var argv = require('minimist')(process.argv.slice(2));
-
-process.stdin
-    .pipe(id({property: argv.property}))
-    .pipe(process.stdout);

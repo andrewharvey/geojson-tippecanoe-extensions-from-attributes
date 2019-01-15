@@ -1,11 +1,11 @@
 {
-  "name": "geojson-id-streaming",
+  "name": "geojson-tippecanoe-extensions-from-attributes",
   "version": "1.1.0",
-  "description": "Add a unique id to a GeoJSON file with streaming",
+  "description": "Adds feature level tippecanoe GeoJSON extensions from feature properties",
   "main": "index.js",
   "license": "ISC",
   "bin": {
-    "geojson-id": "geojson-id"
+    "geojson-tippecanoe-extensions-from-attributes": "geojson-tippecanoe-extensions-from-attributes"
   },
   "scripts": {
     "test": "tap test.js"

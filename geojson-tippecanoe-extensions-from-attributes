@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+var extensionsStream = require('./');
+
+process.stdin
+    .pipe(extensionsStream())
+    .pipe(process.stdout);
