@@ -9,8 +9,8 @@ Adds feature level tippecanoe GeoJSON extensions from feature properties.
     "type": "Feature",
     "properties": {
         "minzoom": 10,
-        "maxzoom" 16
-    }
+        "maxzoom": 16
+    },
     "geometry": null
 }
 ```
@@ -22,8 +22,8 @@ Adds feature level tippecanoe GeoJSON extensions from feature properties.
     "type": "Feature",
     "tippecanoe": {
         "minzoom": 10,
-        "maxzoom" 16
-    }
+        "maxzoom": 16
+    },
     "properties": {},
     "geometry": null
 }
