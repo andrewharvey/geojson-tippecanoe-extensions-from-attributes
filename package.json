@@ -1,6 +1,6 @@
 {
   "name": "geojson-tippecanoe-extensions-from-attributes",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Adds feature level tippecanoe GeoJSON extensions from feature properties",
   "main": "index.js",
   "license": "ISC",
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "tap test.js"
   },
-  "author": "Andrew Harvey",
+  "author": "Andrew Harvey <andrew@alantgeo.com.au>",
   "dependencies": {
     "geojson-stream": "^0.0.1",
     "minimist": "^1.2.0",
