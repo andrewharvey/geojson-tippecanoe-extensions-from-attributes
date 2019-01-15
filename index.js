@@ -29,6 +29,6 @@ function setExtensions(feature) {
         delete feature.properties.layer
     }
     return Object.assign({}, feature, {
-        tipppecanoe: tippecanoe
+        tippecanoe: tippecanoe
     });
 }
